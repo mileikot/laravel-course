@@ -12,7 +12,9 @@
         <ul>
         @foreach ($posts as $post)
             <li>
-                <a href="/post/{{$post->slug}}">{{$post->slug}}</a>
+                <h2><a href="/posts/{{$post->slug}}">{{$post->title}}</a></h2>
+                <div>{{$post->excerpt}}</div>
+                <div>{{$post->author}} / {{$post->date->diffForHumans()}}</div>
             </li>
         @endforeach
     </ul>
