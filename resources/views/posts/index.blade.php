@@ -8,10 +8,14 @@
 </head>
 <body>
     <h1>My personal blog</h1>
-
-    <ul>
-        <li><a href="/posts/1">Post 1</a></li>
-        <li><a href="/posts/2">Post 2</a></li>
+    @if ($posts->count())
+        <ul>
+        @foreach ($posts as $post)
+            <li>
+                <a href="/post/{{$post->slug}}">{{$post->slug}}</a>
+            </li>
+        @endforeach
     </ul>
+    @endif
 </body>
 </html>
